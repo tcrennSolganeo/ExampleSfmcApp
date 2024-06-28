@@ -11,10 +11,11 @@ class DataBase {
               rejectUnauthorized: false
             }
         });
+        this.client.connect();
     }
 
     checkIfTableExist() {
-        this.client.connect();
+        //this.client.connect();
         this.client.query(`SELECT EXISTS (
             SELECT 1
             FROM   information_schema.tables 
@@ -25,13 +26,13 @@ class DataBase {
             if(res.rows.length > 0) {
                 return true;
             }
-            this.client.end();
+            //this.client.end();
         });
         return false;
     }
 
     createSchemaAndTable() {
-        this.client.connect();
+        //this.client.connect();
         this.client.query(`CREATE TABLE "${this.table}" (
             "id" int PRIMARY KEY,
             "name" varchar,
@@ -46,7 +47,7 @@ class DataBase {
             if(res.rows.length > 0) {
                 return true;
             }
-            this.client.end();
+            //this.client.end();
         });
     }
 }
