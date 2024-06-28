@@ -3,14 +3,8 @@ const axios = require('axios');
 const fs = require('fs');
 const path = require('path');
 const router = express.Router();
-const { Client } = require('pg');
-const { DataBase } = require('../classes/database.ts');
-const client = new Client({
-    connectionString: process.env.DATABASE_URL,
-    ssl: {
-      rejectUnauthorized: false
-    }
-});
+const DataBase = require('../classes/database');
+const database = new DataBase();
 
 const subdomain = process.env.subdomain;
 
@@ -19,8 +13,8 @@ router.get('/', async (req, res) => {
     console.log('Session ID:', req.sessionID);
 
     /* Check if schema and table is created in the database */
-    let tableExist = false;
-    client.connect();
+    let tableExist = database.checkIfTableExist();
+    /*client.connect();
     client.query(`SELECT EXISTS (
         SELECT 1
         FROM   information_schema.tables 
@@ -32,7 +26,7 @@ router.get('/', async (req, res) => {
             tableExist = true;
         }
         client.end();
-    });
+    });*/
     if(!tableExist) {
         console.log('Table doesn\'t exits in database');
         return res.redirect('/init');
