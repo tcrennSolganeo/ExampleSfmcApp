@@ -11,7 +11,6 @@ const client = new Client({
 });
 
 router.get('/', (req, res) => {
-    res.send("<h1>LUL</h1>");
     fs.readFile(path.join(__dirname, '../views', 'init.html'), 'utf8', (err, html) => {
         if (err) {
             console.error('Failed to read the HTML file', err);
