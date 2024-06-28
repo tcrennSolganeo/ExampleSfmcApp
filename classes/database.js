@@ -13,7 +13,6 @@ class DataBase {
         });
     }
 
-
     checkIfTableExist() {
         this.client.connect();
         this.client.query(`SELECT EXISTS (
@@ -29,6 +28,26 @@ class DataBase {
             this.client.end();
         });
         return false;
+    }
+
+    createSchemaAndTable() {
+        this.client.connect();
+        this.client.query(`CREATE TABLE "${this.table}" (
+            "id" int PRIMARY KEY,
+            "name" varchar,
+            "email" varchar UNIQUE,
+            "hash" varchar,
+            "picture" varchar,
+            "createdAt" timestamp,
+            "updatedAt" timestamp
+        );`, (err, res) => {
+            if (err) throw err;
+            console.log('Create Table result', res);
+            if(res.rows.length > 0) {
+                return true;
+            }
+            this.client.end();
+        });
     }
 }
 

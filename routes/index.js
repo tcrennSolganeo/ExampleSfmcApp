@@ -14,21 +14,9 @@ router.get('/', async (req, res) => {
 
     /* Check if schema and table is created in the database */
     let tableExist = database.checkIfTableExist();
-    /*client.connect();
-    client.query(`SELECT EXISTS (
-        SELECT 1
-        FROM   information_schema.tables 
-        WHERE  table_schema = 'SchemaName'
-        AND    table_name = 'TableName'
-   );`, (err, res) => {
-        if (err) throw err;
-        if(res.rows.length > 0) {
-            tableExist = true;
-        }
-        client.end();
-    });*/
+
     if(!tableExist) {
-        console.log('Table doesn\'t exits in database');
+        console.log('Table doesn\'t exits in database, redirect to init');
         return res.redirect('/init');
     }
 
