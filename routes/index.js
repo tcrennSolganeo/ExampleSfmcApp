@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const router = express.Router();
 const { Client } = require('pg');
-const { DataBase } = require('../classes/database');
+const { DataBase } = require('../classes/database.ts');
 const client = new Client({
     connectionString: process.env.DATABASE_URL,
     ssl: {
