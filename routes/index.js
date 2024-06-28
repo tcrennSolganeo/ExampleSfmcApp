@@ -20,7 +20,12 @@ router.get('/', async (req, res) => {
     /* Check if schema and table is created in the database */
     let tableExist = false;
     client.connect();
-    client.query('SELECT table_schema,table_name FROM information_schema.tables WHERE  table_schema = "AppSchema" AND table_name   = "AppTable"', (err, res) => {
+    client.query(`SELECT EXISTS (
+        SELECT 1
+        FROM   information_schema.tables 
+        WHERE  table_schema = 'SchemaName'
+        AND    table_name = 'TableName'
+   );`, (err, res) => {
         if (err) throw err;
         if(res.rows.length > 0) {
             tableExist = true;
