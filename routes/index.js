@@ -18,9 +18,9 @@ router.get('/', async (req, res) => {
     console.log('Session ID:', req.sessionID);
 
     /* Check if schema and table is created in the database */
-    /*let tableExist = false;
+    let tableExist = false;
     client.connect();
-    client.query('SELECT table_schema,table_name FROM information_schema.tables WHERE  table_schema = "AppSchema" AND  table_name   = "AppTable"', (err, res) => {
+    client.query('SELECT table_schema,table_name FROM information_schema.tables WHERE  table_schema = "AppSchema" AND table_name   = "AppTable"', (err, res) => {
         if (err) throw err;
         if(res.rows.length > 0) {
             tableExist = true;
@@ -30,7 +30,7 @@ router.get('/', async (req, res) => {
     if(!tableExist) {
         console.log('Table doesn\'t exits in database');
         return res.redirect('/init');
-    }*/
+    }
 
     const accessToken = req.session.accessToken;
 
