@@ -1,5 +1,5 @@
+const config = require('config');
 const { Client } = require('pg');
-const config = require('../config/default.json');
 
 class DataBase {
     constructor() {
