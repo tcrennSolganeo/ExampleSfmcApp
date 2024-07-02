@@ -1,4 +1,4 @@
-const config = require('config');
+/*const config = require('config');
 const { Client } = require('pg');
 
 class DataBase {
@@ -52,4 +52,4 @@ class DataBase {
     }
 }
 
-module.exports = DataBase;
+module.exports = DataBase;*/

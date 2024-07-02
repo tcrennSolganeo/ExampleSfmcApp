@@ -2,8 +2,8 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const router = express.Router();
-const DataBase = require('../classes/database');
-const database = new DataBase();
+/*const DataBase = require('../classes/database');
+const database = new DataBase();*/
 
 router.get('/', (req, res) => {
 
