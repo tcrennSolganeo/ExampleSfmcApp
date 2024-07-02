@@ -28,7 +28,13 @@ router.get('/', async (req, res) => {
     }
 
     try {
-        const response = await axios.get(`https://${subdomain}.rest.marketingcloudapis.com/messaging/v1/email/definitions`, {
+        /*const response = await axios.get(`https://${subdomain}.rest.marketingcloudapis.com/messaging/v1/email/definitions`, {
+            headers: {
+                'Authorization': `Bearer ${accessToken}`
+            }
+        });*/
+
+        const response = await axios.get(`https://${subdomain}.auth.marketingcloudapis.com/v2/userinfo`, {
             headers: {
                 'Authorization': `Bearer ${accessToken}`
             }
