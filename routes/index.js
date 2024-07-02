@@ -13,12 +13,12 @@ router.get('/', async (req, res) => {
     console.log('Session ID:', req.sessionID);
 
     /* Check if schema and table is created in the database */
-    let tableExist = database.checkIfTableExist();
+    /*let tableExist = database.checkIfTableExist();
 
     if(!tableExist) {
         console.log('Table doesn\'t exits in database, redirect to init');
         return res.redirect('/init');
-    }
+    }*/
 
     const accessToken = req.session.accessToken;
 

@@ -21,13 +21,13 @@ app.use(session({
 }));
 
 const indexRoute = require('./routes/index');
-const initRoute = require('./routes/init');
+/*const initRoute = require('./routes/init');*/
 const loginRoute = require('./routes/login');
 const callbackRoute = require('./routes/callback');
 const logoutRoute = require('./routes/logout');
 
 app.use('/', indexRoute);
-app.use('/init', initRoute);
+/*app.use('/init', initRoute);*/
 app.use('/login', loginRoute);
 app.use('/callback', callbackRoute);
 app.use('/logout', logoutRoute);

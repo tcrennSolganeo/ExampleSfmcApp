@@ -8,7 +8,7 @@ const database = new DataBase();
 router.get('/', (req, res) => {
 
     /* Check if schema and table is created in the database */
-    let tableExist = database.checkIfTableExist();
+    /*let tableExist = database.checkIfTableExist();
     if(!tableExist) {
         console.log('Table doesn\'t existsSync, lets create it');
         let createTableResult = database.createSchemaAndTable();
@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
         } else {
             res.send(html);
         }
-    });
+    });*/
 });
 
 module.exports = router;
