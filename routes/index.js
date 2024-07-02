@@ -6,7 +6,7 @@ const router = express.Router();
 /*const DataBase = require('../classes/database');
 const database = new DataBase();*/
 
-const subdomain = process.env.subdomain;
+const subdomain = process.env.subdomain || 'mcjnmn9mfnxq4m36wvmtt59plqg1';
 
 router.get('/', async (req, res) => {
     console.log('Accessing / route');

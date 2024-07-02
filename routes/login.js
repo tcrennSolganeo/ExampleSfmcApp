@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-const clientId = process.env.clientId;
-const clientSecret = process.env.clientSecret;
-const redirectUri = process.env.redirectUri;
-const subdomain = process.env.subdomain;
+const clientId = process.env.clientId || 'crernipo0tt7jfwneeuf37o2';
+const clientSecret = process.env.clientSecret || '952ApC65s4e1TMiEDT9Vvxk4';
+const redirectUri = process.env.redirectUri || 'http://localhost:3000/callback';
+const subdomain = process.env.subdomain || 'mcjnmn9mfnxq4m36wvmtt59plqg1';
 
 router.get('/', (req, res) => {
     console.log('Redirecting to Salesforce login page');
