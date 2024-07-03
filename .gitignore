@@ -1,3 +1,15 @@
+#dev env file
+.env.dev
+.env.*
+
+#ssl
+root.crt
+root.key
+root.srl
+server.crt
+server.csr
+server.key
+
 # Logs
 logs
 *.log
