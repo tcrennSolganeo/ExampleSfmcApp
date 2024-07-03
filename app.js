@@ -43,8 +43,8 @@ if(process.env.NODE_ENV !== 'development') {
     });
 } else {
     const sslCredentials = {
-        key: fs.readFileSync('./server.key'), // replace it with your key path
-        cert: fs.readFileSync('./server.crt'), // replace it with your certificate path
+        key: fs.readFileSync('./server.key'), // replace if needed it with your key path
+        cert: fs.readFileSync('./server.crt'), // replace if needed it with your certificate path
     }
     var httpsServer = https.createServer(sslCredentials, app);
     

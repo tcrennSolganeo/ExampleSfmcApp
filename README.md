@@ -5,13 +5,13 @@ To use example-sfmc-app in a production environment, follow the steps below:
 1. Clone the repository:
 
    ```shell
-   git clone https://github.com/invokecreate/example-sfmc-app.git
+   git clone https://github.com/tcrennSolganeo/ExampleSfmcApp.git
    ```
 
 2. Install the dependencies:
 
    ```shell
-   cd example-sfmc-app
+   cd ExampleSfmcApp
    npm install
    ```
 
@@ -24,23 +24,23 @@ To use example-sfmc-app in a production environment, follow the steps below:
 
    You can set these environment variables in your hosting environment or use a tool like [dotenv](https://www.npmjs.com/package/dotenv) to load them from a file.
 
-4. Start the application:
+   If you are running the app locally, you can simply uncomment the values inside the .env.dev file and change the credentials
+
+4. Configure the SSL certificcates:
+   https://akshitb.medium.com/how-to-run-https-on-localhost-a-step-by-step-guide-c61fde893771
+
+
+5. Start the application:
 
    ```shell
-   npm start
+   nodemon app.js
    ```
 
-5. Deploy the application to your production server or platform of choice. Make sure to set the appropriate environment variables in your production environment.
+6. Deploy the application to your production server or platform of choice. Make sure to set the appropriate environment variables in your production environment.
 
-6. Access the application using the provided URL or the one associated with your production server.
+7. Access the application using the provided URL or the one associated with your production server.
 
    **Note:** Ensure that the application is accessible over HTTPS in a production environment, as SFMC requires secure connections for authentication.
-
-7. Use the example-sfmc-app to authenticate with SFMC and retrieve email definitions using the SFMC REST API.
-
-8. Customize the application as needed for your specific use case by modifying the code and views.
-
-For additional information on configuring and customizing the application, refer to the [Configuration](#configuration) section.
 
 ## Configuration
 
@@ -52,8 +52,4 @@ The following environment variables are required for configuring the application
 - `redirectUri`: The redirect URI for the application.
 - `subdomain`: The SFMC subdomain for your account.
 
-You can set these environment variables in your hosting environment or use a tool like [dotenv](https://www.npmjs.com/package/dotenv) to load them from a file.
-
-## License
-
-This project is licensed under the MIT License.
+You can set these environment variables in your hosting environment
