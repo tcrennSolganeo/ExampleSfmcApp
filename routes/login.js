@@ -7,6 +7,7 @@ const redirectUri = process.env.redirectUri;
 const subdomain = process.env.subdomain;
 
 router.get('/', (req, res) => {
+    console.log('Request login:', req);
     console.log('Redirecting to Salesforce login page');
     const authorizationUrl = `https://${subdomain}.auth.marketingcloudapis.com/v2/authorize?response_type=code&client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}`;
     res.redirect(authorizationUrl);
