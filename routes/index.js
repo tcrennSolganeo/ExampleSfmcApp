@@ -11,6 +11,7 @@ const subdomain = process.env.subdomain;
 router.get('/', async (req, res) => {
     console.log('Accessing / route');
     console.log('Session ID:', req.sessionID);
+    console.log('Request:', req);
 
     /* Check if schema and table is created in the database */
     /*let tableExist = database.checkIfTableExist();
